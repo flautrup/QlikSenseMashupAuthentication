@@ -1,4 +1,4 @@
-qlikSenseLogin = function (config) {
+qlikSenseLogin = function (config, back) {
     return new Promise(function (resolve, reject) {
         var req = new XMLHttpRequest();
         // Include credentials with request
@@ -21,7 +21,8 @@ qlikSenseLogin = function (config) {
             }
         }
         //Build request to PersonalAPI to get information on user
-        personalUrl = (config.isSecure ? "https://" : "http://") + config.host + (config.port ? ":" + config.port : "") + config.prefix + "qps/user?targetUri=" + config.targetUri;
+        tmpTargetUri=config.targetUri + "?back=" + back;
+        personalUrl = (config.isSecure ? "https://" : "http://") + config.host + (config.port ? ":" + config.port : "") + config.prefix + "qps/user?targetUri=" + tmpTargetUri;
         req.open('GET', personalUrl);
         req.send();
 

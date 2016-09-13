@@ -1,13 +1,21 @@
 <html>
+
 <head>
 </head>
-<script src="http://rd-flp-51.rdlund.qliktech.com:3000/helper/config.js"></script>
+<script src="http://10.88.148.230:3000/helper/config.js"></script>
+
 <body>
   <!-- This page is used to consume the tichet and redirect the user back to the mashup -->
   <script>
     window.onload = function() {
-      window.location = config.sourceUri;
+      function getParameterByName(name) {
+        var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+        return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+      }
+
+      window.location = config.baseUri + getParameterByName("back");
     }
-</script>
+  </script>
 </body>
+
 </html>

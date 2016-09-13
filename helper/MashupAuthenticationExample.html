@@ -140,7 +140,7 @@
 	<script src="qlikextwebauth.js"></script>
 	<script>
 		// Login user to Qlik Sense and after that load mashup
-	window.onload = qlikSenseLogin(config).then(mashup()).catch(function(error) {
+	window.onload = qlikSenseLogin(config,"MashupAuthenticationExample.html").then(mashup()).catch(function(error) {
 		console.log('oh no', error);
 	});
 </script>

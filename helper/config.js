@@ -10,6 +10,7 @@
         isSecure: false,
         //targetUri is the page to redirect to after successfull authentication for ticket consumption
         targetUri: "http://rd-flp-51.rdlund.qliktech.com/db/content/PersonalAPI/mashupredirectexample.html",
-        //sourceUri is the page that mashupredirectexample.html should redirect back to
-        sourceUri: "http://10.88.148.230:3000/helper/MashupAuthenticationExample.html"
+        //baseUri is the page that mashupredirectexample.html use as base for redirecting back to the mashup server. 
+        //The back parameter to the login function is added to this uri
+        baseUri: "http://10.88.148.230:3000/helper/"
     };
